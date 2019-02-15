@@ -19,10 +19,10 @@ var myConfig = {
 
  ScaleX: {
     values: [
-      "Energy",
-      "Infrastructure",
-      "Transport",
-      "Other"
+      Energy,
+      Infrastructure,
+      Transport,
+      Other
     ]
   },
   series: [
