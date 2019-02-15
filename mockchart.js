@@ -20,7 +20,7 @@ var myConfig = {
     values: '0:200:10'
   },
    scaleX: {
-    values: 'Energy : Infrastructure : Transport : Other'
+    values: ["Energy", "Infrastructure", "Transport", "Other"]
   },
   series: [
     {
