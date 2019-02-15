@@ -46,6 +46,21 @@ select.addEventListener('change', function() {
       plotindex: 0,
       values: secondDataSet
     });
+    } else if (event.target.value == '2') {
+    zingchart.exec('myChart', 'setseriesvalues', {
+      plotindex: 0,
+      values: thirdDataSet
+    });
+      } else if (event.target.value == '3') {
+    zingchart.exec('myChart', 'setseriesvalues', {
+      plotindex: 0,
+      values: fourthDataSet
+    });
+        } else if (event.target.value == '4') {
+    zingchart.exec('myChart', 'setseriesvalues', {
+      plotindex: 0,
+      values: fifthDataSet
+    });
   } else {
     alert('Please Select An Option');
   }
