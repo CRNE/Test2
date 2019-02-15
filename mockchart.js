@@ -17,14 +17,13 @@ var myConfig = {
  	  }
  	},
 
- ScaleX: {
-    values: [
-      Energy,
-      Infrastructure,
-      Transport,
-      Other
-    ]
-  },
+  scale-x: [
+    values: {
+      "Mon",
+      "Wed",
+      "Fri"
+    }
+  ],
   series: [
     {
       values: null
