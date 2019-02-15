@@ -17,11 +17,11 @@ var myConfig = {
  	  }
  	},
   scaleY: {
-    values: '0:250:10'
+    values: '0:200:10'
   },
   series: [
     {
-      values: null
+      values: ["Energy", "Infrastructure", "Transport", "Other"]
     }
   ]
 };
