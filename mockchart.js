@@ -1,72 +1,68 @@
-// Create mock data
-var firstDataSet = [200, 70, 34, 154];
-var secondDataSet = [175, 182, 17, 47];
-var thirdDataSet = [13, 92, 123, 12];
-var fourthDataSet = [75, 87, 34, 130];
-var fifthDataSet = [82, 164, 14, 66];
-
-// Create chart
-var myConfig = {
-  type: 'bar',
-  plot: {
- 	  animation:{
- 	    effect: 4,
- 	    method: 0,
-      speed: 500,
- 	    sequence: 1
- 	  }
- 	},
-
-  scale-x: [
-    values: {
-      "Mon",
-      "Wed",
-      "Fri"
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawCharts);
+function drawCharts() {
+  
+  // BEGIN BAR CHART
+  /*
+  // create zero data so the bars will 'grow'
+  var barZeroData = google.visualization.arrayToDataTable([
+    ['Day', 'Page Views', 'Unique Views'],
+    ['Sun',  0,      0],
+    ['Mon',  0,      0],
+    ['Tue',  0,      0],
+    ['Wed',  0,      0],
+    ['Thu',  0,      0],
+    ['Fri',  0,      0],
+    ['Sat',  0,      0]
+  ]);
+	*/
+  // actual bar chart data
+  var barData = google.visualization.arrayToDataTable([
+    ['Headlight', 'Matters under Headlight', { role: 'style' }],
+    ['Energy',  200, 'color: #DD2720'],
+    ['Infrastructure',  370, 'color: #DD2720'],
+    ['Transport',  114, 'color: #DD2720'],
+    ['Other',  68, 'color: #DD2720']
+  ]);
+  // set bar chart options
+  var barOptions = {
+    focusTarget: 'category',
+    backgroundColor: 'transparent',
+    colors: ['#dd2720'],
+    fontName: 'Arial',
+    chartArea: {
+      left: 50,
+      top: 10,
+      width: '100%',
+      height: '70%'
+    },
+    bar: {
+      groupWidth: '80%'
+    },
+    hAxis: {
+      textStyle: {
+        fontSize: 11
+      }
+    },
+    vAxis: {
+      minValue: 0,
+      baselineColor: '#DDD',
+      gridlines: {
+        color: '#DDD',
+        count: 4
+      },
+      textStyle: {
+        fontSize: 11
+      }
+    },
+    animation: {
+      duration: 1200,
+      easing: 'out',
+			startup: true
     }
-  ],
-  series: [
-    {
-      values: null
-    }
-  ]
-};
-
-zingchart.render({
-  id: 'myChart',
-  data: myConfig
-});
-
-// Grab <select> element from the DOM
-var select = document.querySelector('select[name="chart-selector"]');
-
-// Add event listener to fire on each selection
-select.addEventListener('change', function() {
-  if (event.target.value == '0') {
-    zingchart.exec('myChart', 'setseriesvalues', {
-      plotindex: 0,
-      values: firstDataSet
-    });
-  } else if (event.target.value == '1') {
-    zingchart.exec('myChart', 'setseriesvalues', {
-      plotindex: 0,
-      values: secondDataSet
-    });
-    } else if (event.target.value == '2') {
-    zingchart.exec('myChart', 'setseriesvalues', {
-      plotindex: 0,
-      values: thirdDataSet
-    });
-      } else if (event.target.value == '3') {
-    zingchart.exec('myChart', 'setseriesvalues', {
-      plotindex: 0,
-      values: fourthDataSet
-    });
-        } else if (event.target.value == '4') {
-    zingchart.exec('myChart', 'setseriesvalues', {
-      plotindex: 0,
-      values: fifthDataSet
-    });
-  } else {
-    alert('Please Select An Option');
-  }
-});
+  };
+  // draw bar chart twice so it animates
+  var barChart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
+  //barChart.draw(barZeroData, barOptions);
+  barChart.draw(barData, barOptions);
+}
