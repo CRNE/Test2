@@ -4,7 +4,7 @@ var secondDataSet = [0, 1, 2, 3, 4, 5, 6, 7];
 
 // Create chart
 var myConfig = {
-  type: 'line',
+  type: 'bar',
   plot: {
  	  animation:{
  	    effect: 4,
