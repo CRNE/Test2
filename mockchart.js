@@ -1,6 +1,9 @@
 // Create mock data
-var firstDataSet = [0, 2, 4, 6, 8, 10, 12, 14];
-var secondDataSet = [0, 1, 2, 3, 4, 5, 6, 7];
+var firstDataSet = [200, 70, 34, 154];
+var secondDataSet = [175, 182, 17, 47];
+var thirdDataSet = [13, 92, 123, 12];
+var fourthDataSet = [75, 87, 34, 130];
+var fifthDataSet = [82, 164, 14, 66];
 
 // Create chart
 var myConfig = {
@@ -14,7 +17,7 @@ var myConfig = {
  	  }
  	},
   scaleY: {
-    values: '0:14:2'
+    values: '0:250:10'
   },
   series: [
     {
