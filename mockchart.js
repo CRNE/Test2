@@ -19,9 +19,12 @@ var myConfig = {
   scaleY: {
     values: '0:200:10'
   },
+   scaleX: {
+    values: 'Energy, Infrastructure, Transport, Other'
+  },
   series: [
     {
-      values: ["Energy", "Infrastructure", "Transport", "Other"]
+      values: null
     }
   ]
 };
