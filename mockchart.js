@@ -16,11 +16,14 @@ var myConfig = {
  	    sequence: 1
  	  }
  	},
-  scaleY: {
-    values: '0:200:10'
-  },
-   scaleX: {
-    values: ["Energy", "Infrastructure", "Transport", "Other"]
+
+ ScaleX: {
+    values: [
+      "Energy",
+      "Infrastructure",
+      "Transport",
+      "Other"
+    ]
   },
   series: [
     {
